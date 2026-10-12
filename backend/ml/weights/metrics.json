@@ -1,0 +1,212 @@
+{
+  "model_name": "MarineLife-MobileNetV3",
+  "architecture": "MobileNetV3-Small (Transfer Learning + Fine-Tuned Head)",
+  "dataset_name": "MarineLife-AI SDG 14 Benchmark Dataset (Curated Verified Marine Specimens)",
+  "num_classes": 10,
+  "classes": [
+    "amphiprion_ocellaris",
+    "aurelia_aurita",
+    "balaenoptera_musculus",
+    "carcharodon_carcharias",
+    "chelonia_mydas",
+    "hippocampus_whitei",
+    "mobula_birostris",
+    "octopus_vulgaris",
+    "pterois_volitans",
+    "tursiops_truncatus"
+  ],
+  "accuracy": 0.55,
+  "precision_macro": 0.5259,
+  "recall_macro": 0.55,
+  "f1_macro": 0.5292,
+  "top3_accuracy": 0.9,
+  "total_test_samples": 60,
+  "test_loss": 0.8456,
+  "evaluation_date": "2026-10-12T09:20:24.043800",
+  "is_real_trained_model": true,
+  "training_time_seconds": 77.06,
+  "confusion_matrix": [
+    [
+      3,
+      2,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      2,
+      3,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      5,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      4,
+      0,
+      0,
+      2,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      4,
+      1,
+      1,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      1,
+      2,
+      3,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      1,
+      0,
+      0,
+      1,
+      0,
+      4,
+      0,
+      0,
+      0
+    ],
+    [
+      1,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      4,
+      0,
+      0
+    ],
+    [
+      1,
+      0,
+      0,
+      0,
+      1,
+      2,
+      0,
+      0,
+      0,
+      2
+    ],
+    [
+      0,
+      0,
+      2,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      3
+    ]
+  ],
+  "class_metrics": {
+    "amphiprion_ocellaris": {
+      "precision": 0.42857142857142855,
+      "recall": 0.5,
+      "f1_score": 0.46153846153846156,
+      "test_support": 6
+    },
+    "aurelia_aurita": {
+      "precision": 0.5,
+      "recall": 0.5,
+      "f1_score": 0.5,
+      "test_support": 6
+    },
+    "balaenoptera_musculus": {
+      "precision": 0.7142857142857143,
+      "recall": 0.8333333333333334,
+      "f1_score": 0.7692307692307693,
+      "test_support": 6
+    },
+    "carcharodon_carcharias": {
+      "precision": 0.6666666666666666,
+      "recall": 0.6666666666666666,
+      "f1_score": 0.6666666666666666,
+      "test_support": 6
+    },
+    "chelonia_mydas": {
+      "precision": 0.4444444444444444,
+      "recall": 0.6666666666666666,
+      "f1_score": 0.5333333333333333,
+      "test_support": 6
+    },
+    "hippocampus_whitei": {
+      "precision": 0.3333333333333333,
+      "recall": 0.5,
+      "f1_score": 0.4,
+      "test_support": 6
+    },
+    "mobula_birostris": {
+      "precision": 0.5714285714285714,
+      "recall": 0.6666666666666666,
+      "f1_score": 0.6153846153846154,
+      "test_support": 6
+    },
+    "octopus_vulgaris": {
+      "precision": 1.0,
+      "recall": 0.6666666666666666,
+      "f1_score": 0.8,
+      "test_support": 6
+    },
+    "pterois_volitans": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1_score": 0.0,
+      "test_support": 6
+    },
+    "tursiops_truncatus": {
+      "precision": 0.6,
+      "recall": 0.5,
+      "f1_score": 0.5454545454545454,
+      "test_support": 6
+    }
+  }
+}
