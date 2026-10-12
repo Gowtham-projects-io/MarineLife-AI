@@ -86,35 +86,21 @@ export default function SpeciesExplorer({ selectedSpeciesId, onCloseModal }) {
       </div>
 
       {/* Filter and Search Bar */}
-      <div className="glass-panel" style={{ padding: '1rem clamp(0.85rem, 2vw, 1.5rem)', marginBottom: '1.8rem', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '1rem' }}>
+      <div className="glass-panel species-filter-bar">
         {/* Search */}
-        <div style={{
-          position: 'relative',
-          flex: '1 1 260px',
-          maxWidth: '500px',
-          width: '100%'
-        }}>
+        <div className="species-search-box">
           <Search size={18} color="var(--color-text-secondary)" style={{ position: 'absolute', left: '12px', top: '50%', transform: 'translateY(-50%)' }} />
           <input
             type="text"
-            placeholder="Search by common name, scientific name, or habitat..."
+            className="species-search-input"
+            placeholder="Search species name, scientific, or habitat..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            style={{
-              width: '100%',
-              padding: '0.65rem 1rem 0.65rem 2.4rem',
-              borderRadius: 'var(--radius-full)',
-              border: '1px solid var(--color-border-cyan)',
-              backgroundColor: 'rgba(7, 27, 43, 0.8)',
-              color: 'var(--color-text-primary)',
-              fontSize: '0.9rem',
-              outline: 'none'
-            }}
           />
         </div>
 
         {/* IUCN Status Filter Buttons */}
-        <div className="touch-scroll-row" style={{ flexShrink: 0 }}>
+        <div className="touch-scroll-row species-status-filters">
           {[
             { label: 'All Statuses', value: 'ALL' },
             { label: 'Endangered', value: 'Endangered' },
@@ -124,18 +110,7 @@ export default function SpeciesExplorer({ selectedSpeciesId, onCloseModal }) {
             <button
               key={f.value}
               onClick={() => setStatusFilter(f.value)}
-              style={{
-                padding: '0.42rem 0.85rem',
-                borderRadius: 'var(--radius-full)',
-                fontSize: '0.8rem',
-                fontWeight: 600,
-                border: statusFilter === f.value ? '1px solid var(--color-bio-cyan)' : '1px solid rgba(77, 238, 234, 0.15)',
-                backgroundColor: statusFilter === f.value ? 'rgba(77, 238, 234, 0.18)' : 'rgba(11, 46, 79, 0.5)',
-                color: statusFilter === f.value ? 'var(--color-bio-cyan)' : 'var(--color-text-secondary)',
-                cursor: 'pointer',
-                transition: 'var(--transition-smooth)',
-                whiteSpace: 'nowrap'
-              }}
+              className={`filter-chip ${statusFilter === f.value ? 'active' : ''}`}
             >
               {f.label}
             </button>

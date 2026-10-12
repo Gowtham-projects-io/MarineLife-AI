@@ -189,7 +189,7 @@ export default function ThreatReporter({ isOpenModal, onCloseModal }) {
               <label style={{ display: 'block', fontSize: '0.85rem', color: 'var(--color-text-secondary)', marginBottom: '0.4rem', fontWeight: 600 }}>
                 Ecological Severity Level
               </label>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '0.5rem' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(65px, 1fr))', gap: '0.5rem' }}>
                 {['Low', 'Medium', 'High', 'Critical'].map((lvl) => (
                   <button
                     key={lvl}

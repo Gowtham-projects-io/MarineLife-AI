@@ -40,11 +40,13 @@ export default function Navbar({ activeTab, setActiveTab, onOpenThreatModal }) {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
-          gap: '0.75rem'
+          gap: '0.6rem',
+          width: '100%',
+          boxSizing: 'border-box'
         }}>
           {/* Logo and SDG Badge */}
           <div
-            style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', cursor: 'pointer', flexShrink: 0 }}
+            style={{ display: 'flex', alignItems: 'center', gap: '0.65rem', cursor: 'pointer', minWidth: 0, flexShrink: 1 }}
             onClick={() => handleTabSelect('identify')}
           >
             <div style={{

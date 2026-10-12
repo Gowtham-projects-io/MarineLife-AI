@@ -407,7 +407,7 @@ export default function Identifier({ onSaveObservation, onInspectSpecies }) {
                   padding: '1.3rem',
                   boxShadow: 'var(--shadow-glow-cyan)'
                 }}>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '0.6rem' }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '0.75rem', marginBottom: '0.6rem' }}>
                     <div>
                       <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.2rem' }}>
                         <span style={{
@@ -503,7 +503,8 @@ export default function Identifier({ onSaveObservation, onInspectSpecies }) {
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'space-between',
-                      gap: '1rem'
+                      flexWrap: 'wrap',
+                      gap: '0.8rem'
                     }}
                   >
                     <div>

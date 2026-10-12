@@ -378,7 +378,9 @@ export default function ObservationsMap({ prefilledObservation, onClearPrefill }
             color: 'var(--color-bio-cyan)',
             display: 'flex',
             alignItems: 'center',
-            justifyContent: 'space-between'
+            justifyContent: 'space-between',
+            flexWrap: 'wrap',
+            gap: '0.5rem'
           }}>
             <span>📍 Pinned Coordinates: {selectedCoords.lat}° N, {selectedCoords.lng}° E</span>
             <button

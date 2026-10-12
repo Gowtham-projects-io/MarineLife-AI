@@ -288,11 +288,12 @@ export default function BiodiversityDashboard() {
                 style={{
                   display: 'flex',
                   alignItems: 'center',
-                  gap: '1rem',
+                  gap: '0.75rem',
                   padding: '0.8rem',
                   borderRadius: 'var(--radius-sm)',
                   backgroundColor: 'rgba(7, 27, 43, 0.65)',
-                  border: '1px solid rgba(77, 238, 234, 0.12)'
+                  border: '1px solid rgba(77, 238, 234, 0.12)',
+                  flexWrap: 'wrap'
                 }}
               >
                 {obs.image_url ? (
