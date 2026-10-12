@@ -69,21 +69,23 @@ export function installApiInterceptor() {
       return originalFetch.apply(this, arguments);
     }
 
-    // Try live server first (works when running backend locally)
+    const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+
+    // In static deployment (e.g. GitHub Pages), handle all API calls client-side
+    // immediately to prevent browser network 404 / 405 error logs
+    if (!isLocal) {
+      return handleMockRoute(urlStr, init);
+    }
+
+    // On local development, try the live backend server first
     try {
       const response = await originalFetch.apply(this, arguments);
-      // If server returned ok, or valid json, return it
       const contentType = response.headers.get('content-type') || '';
       if (response.ok && contentType.includes('application/json')) {
         return response;
       }
-      // If 404 or HTML returned (standard for Vite static fallback on GH Pages), fallback to mock
-      if (response.status === 404 || contentType.includes('text/html')) {
-        return handleMockRoute(urlStr, init);
-      }
-      return response;
+      return handleMockRoute(urlStr, init);
     } catch (err) {
-      // Live server unreachable (GitHub Pages environment)
       return handleMockRoute(urlStr, init);
     }
   };
@@ -159,13 +161,28 @@ async function handleMockRoute(urlStr, init = {}) {
     return createJsonResponse(MOCK_METRICS, 200);
   }
 
-  // 6. Predict Inference
+  // 6. Sample Images
+  if (path.includes('/api/sample-images')) {
+    const samples = MOCK_SPECIES.map((s) => ({
+      species_id: s.id,
+      common_name: s.common_name,
+      filename: `${s.id}.jpg`,
+      url: `${import.meta.env.BASE_URL}samples/${s.id}.jpg`
+    }));
+    return createJsonResponse(samples, 200);
+  }
+
+  // 7. Predict Inference
   if (path.includes('/api/predict')) {
     let fileName = '';
-    if (init.body instanceof FormData) {
-      const file = init.body.get('file');
-      if (file && file.name) fileName = file.name;
-    }
+    try {
+      if (init.body instanceof FormData) {
+        const file = init.body.get('file');
+        if (file && typeof file === 'object' && file.name) {
+          fileName = file.name;
+        }
+      }
+    } catch (e) {}
     const result = simulatePrediction(fileName);
     return createJsonResponse(result, 200);
   }
