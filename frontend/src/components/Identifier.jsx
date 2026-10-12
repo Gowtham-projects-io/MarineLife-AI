@@ -2,14 +2,14 @@ import React, { useState, useRef } from 'react';
 import { UploadCloud, Sparkles, AlertTriangle, CheckCircle2, Clock, MapPin, BookmarkPlus, ArrowRight, Image as ImageIcon } from 'lucide-react';
 
 const SAMPLE_SPECIES = [
-  { id: 'chelonia_mydas', name: 'Green Sea Turtle', file: '/samples/chelonia_mydas.jpg' },
-  { id: 'amphiprion_ocellaris', name: 'Clown Anemonefish', file: '/samples/amphiprion_ocellaris.jpg' },
-  { id: 'carcharodon_carcharias', name: 'Great White Shark', file: '/samples/carcharodon_carcharias.jpg' },
-  { id: 'mobula_birostris', name: 'Giant Manta Ray', file: '/samples/mobula_birostris.jpg' },
-  { id: 'hippocampus_whitei', name: "White's Seahorse", file: '/samples/hippocampus_whitei.jpg' },
-  { id: 'octopus_vulgaris', name: 'Common Octopus', file: '/samples/octopus_vulgaris.jpg' },
-  { id: 'aurelia_aurita', name: 'Moon Jellyfish', file: '/samples/aurelia_aurita.jpg' },
-  { id: 'balaenoptera_musculus', name: 'Blue Whale', file: '/samples/balaenoptera_musculus.jpg' },
+  { id: 'chelonia_mydas', name: 'Green Sea Turtle', file: `${import.meta.env.BASE_URL}samples/chelonia_mydas.jpg` },
+  { id: 'amphiprion_ocellaris', name: 'Clown Anemonefish', file: `${import.meta.env.BASE_URL}samples/amphiprion_ocellaris.jpg` },
+  { id: 'carcharodon_carcharias', name: 'Great White Shark', file: `${import.meta.env.BASE_URL}samples/carcharodon_carcharias.jpg` },
+  { id: 'mobula_birostris', name: 'Giant Manta Ray', file: `${import.meta.env.BASE_URL}samples/mobula_birostris.jpg` },
+  { id: 'hippocampus_whitei', name: "White's Seahorse", file: `${import.meta.env.BASE_URL}samples/hippocampus_whitei.jpg` },
+  { id: 'octopus_vulgaris', name: 'Common Octopus', file: `${import.meta.env.BASE_URL}samples/octopus_vulgaris.jpg` },
+  { id: 'aurelia_aurita', name: 'Moon Jellyfish', file: `${import.meta.env.BASE_URL}samples/aurelia_aurita.jpg` },
+  { id: 'balaenoptera_musculus', name: 'Blue Whale', file: `${import.meta.env.BASE_URL}samples/balaenoptera_musculus.jpg` },
 ];
 
 export default function Identifier({ onSaveObservation, onInspectSpecies }) {

@@ -181,7 +181,7 @@ export default function SpeciesExplorer({ selectedSpeciesId, onCloseModal }) {
                   alt={sp.common_name}
                   onError={(e) => {
                     e.currentTarget.onerror = null;
-                    e.currentTarget.src = `/samples/${sp.id}.jpg`;
+                    e.currentTarget.src = `${import.meta.env.BASE_URL}samples/${sp.id}.jpg`;
                   }}
                   style={{
                     width: '100%',
@@ -282,7 +282,7 @@ export default function SpeciesExplorer({ selectedSpeciesId, onCloseModal }) {
                 alt={activeSpecies.common_name}
                 onError={(e) => {
                   e.currentTarget.onerror = null;
-                  e.currentTarget.src = `/samples/${activeSpecies.id}.jpg`;
+                  e.currentTarget.src = `${import.meta.env.BASE_URL}samples/${activeSpecies.id}.jpg`;
                 }}
                 style={{ width: '100%', height: '100%', objectFit: 'cover' }}
               />

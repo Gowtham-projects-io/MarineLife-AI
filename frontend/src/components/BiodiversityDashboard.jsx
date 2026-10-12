@@ -302,7 +302,7 @@ export default function BiodiversityDashboard() {
                     onError={(e) => {
                       e.currentTarget.onerror = null;
                       if (obs.species_id) {
-                        e.currentTarget.src = `/samples/${obs.species_id}.jpg`;
+                        e.currentTarget.src = `${import.meta.env.BASE_URL}samples/${obs.species_id}.jpg`;
                       }
                     }}
                     style={{ width: '48px', height: '48px', borderRadius: '8px', objectFit: 'cover' }}
